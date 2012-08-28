@@ -3,7 +3,8 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "node idp/bin/app"
+    "start": "node idp/bin/app",
+    "test": "vows idp/tests/test_*.js --spec"
   },
   "dependencies": {
     "client-sessions": "0.0.8",
