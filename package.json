@@ -3,13 +3,18 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "node server/bin/app"
+    "start": "node idp/bin/app"
   },
   "dependencies": {
+    "client-sessions": "0.0.8",
+    "convict": "0.0.6",
     "express": "3.0.0rc3",
-    "jade": "0.27.2"
+    "jade": "0.27.2",
+    "jwcrypto": "0.4.2",
+    "winston": "0.6.2"
   },
   "devDepencencies": {
-    "awsbox": "0.2.15"
+    "awsbox": "0.2.15",
+    "vows": "0.6.4"
   }
 }

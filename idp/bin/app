@@ -1,16 +1,17 @@
-
-/**
- * Module dependencies.
- */
+#!/usr/bin/env node
+/* -*- mode: js2 -*- */
 
 var express = require('express'),
     http = require('http'),
-    path = require('path');
+    path = require('path'),
+    wsapi = require('../lib/wsapi'),
+    logger = require('../lib/logging').logger,
+    configuration = require('../lib/configuration');
 
 var app = express();
 
 app.configure(function(){
-  app.set('port', process.env.PORT || 3000);
+  app.set('port', configuration.get('bind_to').port);
   app.set('views', path.join(__dirname, '../views'));
   app.set('view engine', 'jade');
   app.use(express.favicon());
@@ -29,6 +30,9 @@ app.get('/', function(req, res) {
   res.render('index', {title: 'w00t'});
 });
 
+// handle wsapi requests
+wsapi.setup({}, app);
+
 http.createServer(app).listen(app.get('port'), function(){
-  console.log("Express server listening on port " + app.get('port'));
+  logger.info("IdP server listening on port " + app.get('port'));
 });

@@ -1,5 +1,8 @@
+# default var/ dir
+var/
+
 # vim ancillary files
-*.un~
+*~
 *.swp
 *.swo
 
@@ -8,6 +11,7 @@
 
 # locally installed node modules
 node_modules
+npm-debug.log
 .gitmodules
 
 # awsbox setup notes
