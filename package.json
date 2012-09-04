@@ -1,5 +1,7 @@
 {
-  "name": "application-name",
+  "name": "fffone.me",
+  "description": "b2g v2 flow prototype",
+
   "version": "0.0.1",
   "private": true,
   "scripts": {
