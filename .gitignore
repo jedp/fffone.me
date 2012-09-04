@@ -1,6 +1,9 @@
 # default var/ dir
 var/
 
+# dev notes
+notes/
+
 # vim ancillary files
 *~
 *.swp
