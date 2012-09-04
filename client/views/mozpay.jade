@@ -1,0 +1,37 @@
+extends layout
+
+block wireframe
+
+  .caption Enter your PIN
+
+  .pin-buttons
+    .button 
+    .button 
+    .button 
+    .button 
+
+  .yes-no
+    a(class='button', href='/marketplace') Cancel
+    a(class='button', href='/createAccount') Buy
+
+block explanation
+
+  h2 Cancel
+
+  p
+
+    | The user can cancel the transaction and return to whence she
+    | came.  This could be either Marketplace or an App.
+
+  h2 Buy
+
+  p If the user enters the correct PIN, the transaction proceeds.
+
+  p This requires
+
+  ul
+    li A way to verify the PIN 
+    li 
+      | A way to authorize carrier billing for the user.
+      | E.g., an identity assertion with a short-term certificate
+

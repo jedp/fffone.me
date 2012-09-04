@@ -6,7 +6,7 @@ var suite = vows.describe('config');
 suite.addBatch({
   "The config": {
     topic: function() {
-      var config = require("../lib/configuration");
+      var config = require("../../lib/configuration");
       this.callback(null, config);
     },
 

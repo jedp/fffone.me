@@ -1,5 +1,5 @@
 const crypto = require('crypto'),
-      logger = require('../logging').logger,
+      logger = require('../../../lib/logging').logger,
       wsapi = require('../wsapi.js');
 
 /**

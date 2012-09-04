@@ -1,0 +1,41 @@
+extends layout
+
+block wireframe
+
+  .caption Setup a PIN
+
+  .pin-buttons
+    .button 
+    .button 
+    .button 
+    .button 
+
+  .yes-no
+    a(class='button', href='/homePage', title='skip') Skip
+    a(class='button setPin', href='/homePage', title='next') Next >>
+
+block explanation
+
+  p
+
+    | To be able to purchase apps from the marketplace (and to make
+    | subsequent purchases from within apps), the user must enter a
+    | PIN.
+
+  h2.skip Skip
+
+  p.skip
+
+    | The user may SKIP this action, but will not be able to make any
+    | purchases until a PIN has been entered.
+
+  h2.next Next
+
+  p.next
+
+    | If the user sets a PIN, we must associate that PIN permanently
+    | with the user's identity.
+
+  p
+
+    | Who curates the PIN (FF acct or MP)?

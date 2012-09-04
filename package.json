@@ -5,13 +5,13 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "node idp/bin/app",
+    "start": "node scripts/run.js",
     "test": "vows idp/tests/test_*.js --spec"
   },
   "dependencies": {
     "client-sessions": "0.0.8",
     "convict": "0.0.6",
-    "express": "3.0.0rc3",
+    "express": "3.0.0rc4",
     "jade": "0.27.2",
     "jwcrypto": "0.4.2",
     "winston": "0.6.2"

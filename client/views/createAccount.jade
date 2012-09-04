@@ -1,0 +1,22 @@
+extends layout
+
+block wireframe
+
+  .caption Create a FireFox Account
+
+  .input Username
+  .input Password
+
+  .yes-no
+    a(class='button', href='/homePage') Skip
+    a(class='button', href='/homePage') Create
+
+block explanation
+
+  h2 Skip
+
+  p Don't set up an account now
+
+  h2 Create
+
+  p Triggers persona/bid email account completion flow

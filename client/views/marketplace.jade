@@ -1,0 +1,34 @@
+extends layout
+
+block wireframe
+
+  .caption Cool App
+
+  .caption $0.99
+
+  .yes-no
+
+    a(class='button', href='/homePage') Meh.
+
+    a(class='button', href='/mozpay') Buy!
+
+block explanation
+
+  h1 Buy Cool App
+
+  h2 Back
+
+  p The user has a way to get back to the Marketplace screen
+
+  h2 Buy
+
+  p The user wants to buy Cool App.
+
+  p The page triggers 
+    tt navigator.mozPay()
+    | in JS with a JWT.
+
+  p The JWT is signed
+
+  p This causes a trusted UI to open, which will prompt the user for her PIN.
+

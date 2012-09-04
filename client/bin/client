@@ -1,0 +1,46 @@
+#!/usr/bin/env node
+// -*- mode: js2; -*-
+
+var express = require('express'),
+    http = require('http'),
+    path = require('path');
+
+var app = express();
+
+app.configure(function(){
+  app.set('port', process.env.PORT || 3000);
+  app.set('views', path.join(__dirname, '../views'));
+  app.set('view engine', 'jade');
+  app.use(express.favicon());
+  app.use(express.logger('dev'));
+  app.use(express.bodyParser());
+  app.use(express.methodOverride());
+  app.use(app.router);
+  app.use(express.static(path.join(__dirname, '../public')));
+});
+
+app.configure('development', function(){
+  app.use(express.errorHandler());
+});
+
+var screens = {
+  splash: 'Splash Screen',
+  setupPIN: 'Setup PIN',
+  homePage: 'Phone Home Page',
+  marketplace: 'Marketplace',
+  mozpay: 'Buy Something',
+  createAccount: 'Create FF Account'
+};
+
+app.get('/:screen?', function(req, res) {
+  var screen = req.param('screen', 'splash');
+  var title = screens[screen];
+
+  res.render(screen, {title: title});
+});
+
+if (! module.parent) {
+  app.listen(app.get('port'), function(err) {
+    console.log("running on http://127.0.0.1:" + app.get('port'));
+  });
+}

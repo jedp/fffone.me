@@ -10,8 +10,8 @@
 const fs = require('fs'),
       path = require('path'),
       url = require('url'),
-      config = require('./configuration'),
-      logger = require('./logging').logger,
+      config = require('../../lib/configuration'),
+      logger = require('../../lib/logging').logger,
       secrets = require('./secrets'),
       express = require('express'),
       httputils = require('./httputils'),
@@ -36,6 +36,8 @@ function allAPIs () {
 
     var api = require(path.join(__dirname, 'wsapi', f));
     APIs[operation] = api;
+
+    logger.info("registered api:", operation);
   });
 
   return APIs;
@@ -57,7 +59,7 @@ exports.setup = function(options, app) {
   var cookieParser = express.cookieParser();
   var bodyParser = express.bodyParser();
 
-  // no options as yet ...
+  // no options as yet ... but we would handle them here
 
   var cookieSessionMiddleware = sessions({
     secret: COOKIE_SECRET,
@@ -72,6 +74,7 @@ exports.setup = function(options, app) {
   });
 
   app.use(function(req, res, next) {
+    console.log("use");
     var purl = url.parse(req.url);
 
     if (purl.pathname.substr(0, WSAPI_PREFIX.length) === WSAPI_PREFIX) {

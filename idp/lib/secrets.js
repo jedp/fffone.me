@@ -53,7 +53,7 @@ function checkName(name) {
 
 // default directory is the var dir.
 function checkDir(dir) {
-  return dir ? dir :  require('./configuration').get('var_path');
+  return dir ? dir :  require('../lib/configuration').get('var_path');
 }
 
 exports.hydrateSecret = function(name, dir) {
